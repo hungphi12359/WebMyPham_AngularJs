@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOSHOP.VN Website mua mỹ phẩm trực tuyến cho mọi nhà</title>
+     <!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        </script> -->
+</head>
+
+<body ng-app="myApp" >
+  <!-- Page Preloder -->
+  <div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Humberger Begin -->
+<div class="humberger__menu__overlay"></div>
+<div class="humberger__menu__wrapper">
+    <div class="humberger__menu__logo">
+        <a href="#"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+    </div>
+    <div class="humberger__menu__cart">
+        <ul>
+            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+        </ul>
+        <div class="header__cart__price">item: <span>$150.00</span></div>
+    </div>
+    <div class="humberger__menu__widget">
+        <div class="header__top__right__language">
+            <img src="img/230px-Flag_of_North_Vietnam_(1955–1976).svg.png" alt="" width="25px">
+            <div>VietNam</div>
+            <span class="arrow_carrot-down"></span>
+            <ul>
+                <li><a href="#">VietNam</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+        </div>
+        <div class="header__top__right__auth">
+            <a href="./login.html"><i class="fa fa-user"></i> Login</a>
+        </div>
+    </div>
+    <nav class="humberger__menu__nav mobile-menu">
+        <ul>
+            <li class="active"><a href="index.html">Trang Chủ</a></li>
+            <li><a href="shop-grid.html">Cửa Hàng</a></li>
+            <li><a href="#">Trang Sản phẩm</a>
+                <ul class="header__menu__dropdown">
+                    <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
+                    <li><a href="./shoping-cart.html">Giỏ Hàng</a></li>
+                    <li><a href="./checkout.html">Kiểm Tra Đơn Hàng</a></li>
+                    <li><a href="./blog-details.html">Chi Tiết Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="header__top__right__social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    </div>
+    <div class="humberger__menu__contact">
+        <ul>
+            <li><i class="fa fa-envelope"></i>phinphpd04328@fpt.edu.vn</li>
+            <li>Miễn Phí Vận Chuyển Cho Đơn Hàng Từ 200.000đ</li>
+        </ul>
+    </div>
+</div>
+<!-- Humberger End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-envelope"></i>phinphpd04328@fpt.edu.vn</li>
+                            <li>Miễn Phí Vận Chuyển Cho Đơn Hàng Từ 200.000đ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="img/230px-Flag_of_North_Vietnam_(1955–1976).svg.png" alt="" width="27px">
+                            <div>VietNam</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">VietNam</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__top__right__auth">
+                            <a href="" href="#" data-toggle="modal" data-target="#signinModal"><i class="fa fa-user"></i> Login</a>
+                        </div>
+                        <div class="header__top__right__auth">
+                            <a href="ManagerProducts.html"><i class="fa fa-user"></i> Admin
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="./index.html"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="shop-grid.html">Cửa Hàng</a></li>
+                        <li><a href="#">Trang Sản Phẩm</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="shop-details.html">Chi Tiết Cửa Hàng</a></li>
+                                <li><a href="shoping-cart.html">Giỏ Hàng</a></li>
+                                <li><a href="checkout.html">Kiểm Tra Đơn Hàng</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container" ng-controller="myCtrl" >
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span class="">Danh Mục Sản Phẩm</span>
+                        </div>
+                        <ul >
+                            <li ng-repeat="item in danhmuc">
+                            <a href="" value="{{item.idDanhMuc}}">{{item.nameDanhMuc}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                
+                                <input type="text" placeholder="Bạn muốn tìm kiếm ?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+84 942232873</h5>
+                                <span>Hỗ Trợ 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__item set-bg" data-setbg="img/1920x450-trang-diem_ab0dfafa8ed54865bd3ce3e9c02fb984_237928a3bf274d9b9ca9b76e49e13730.jpg">
+                        <div class="hero__text">
+                            <span>Mỹ Phẩm Dành Cho Mọi Người</span>
+                            <h2>Mỹ Phẩm <br />100% Chính Hãng</h2>
+                            <p>Miễn Phí Vận Chuyển Và Giao Hàng Tận Nơi</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Categories Section Begin -->
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="categories__slider owl-carousel">
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/nuoc-hoa-charme-pink-girl-2-500x500.jpg">
+                            <h5><a href="#">Nước hoa nữ Charme Pink Girl 75ml</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/Charme-Boss-Charme-100ml-3-500x500.jpg">
+                            <h5><a href="#">Nước Hoa Nam Charme Boss Charme 100ml</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/700x700cb2-500x500.jpg">
+                            <h5><a href="#">Combo 499k - Perfect Days (4 sản phẩm + 5 quà tặng)</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/gel-tam-huong-nuoc-hoa-cap-am-sang-da-the-face-shop-perfume-seed-rich-creamy-shower-gel-1-500x500.jpg">
+                            <h5><a href="#">Gel Tắm Hương Nước Hoa Cấp Ẩm, Sáng Da The Face Shop Perfume Seed Rich Creamy Shower Gel 300ml</a></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="categories__item set-bg" data-setbg="img/product/11-500x500.png">
+                            <h5><a href="#">Bộ Đôi Sản Phẩm Huxley Secret of Sahara Body Duo; Moroccan Gardener 300ml+300ml</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Sản Phẩm Nổi Bật</h2>
+                    </div>
+                    <div class="featured__controls">
+                        <ul>
+                            <li class="active" data-filter="*">Tất Cả</li>
+                            <li data-filter=".oranges">Trang Điểm Mặt</li>
+                            <li data-filter=".fresh-meat">Trang Điểm Mắt</li>
+                            <li data-filter=".vegetables">Trang Điểm Môi</li>
+                            <li data-filter=".fastfood">Phụ Kiện Trang Điểm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row featured__filter">
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/fmgt_quad_eyeshadow_palette_oh__splash_edition_01__aurora_splash_1_40615a6c723844c5add049e612582fa0_master.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/05_82ef961d844d447ba86fdc68a98ed990_large_1__31ca39cb1c064751847571480842487a_1024x1024.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/6149cc798f4bd9b8ccf6209b515fff_grande_964f67d047444f2a959027e2b79d7f95_6cb8c3a9847341e6ac94274eb5f426be_master.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/tone_up_loose_powder_v201_ee566f696d1c41d99e13e94b6dfbef7c_master.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/fmgt_mega_proof_mascara_6da2fbf9b2db4f149040614f1026f102_master.jpg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/ink_lasting_cushion_v203_0fadd3f5409a4fba82fe9520dd620d56_grande_843ae85edbae4e0387877726c1172cad_1024x1024.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/daily_beauty_tools_eyebrow_trimming_scissors_with_comb_b4926f8890a241d19e2f88813fd3a340_1024x1024.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/maxx_eye_mascara_1_895ce6e2e73a4db5815aece4ed86b920_grande_719d9b0bd6794f4b8002b2d69e0928f8_master.png">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>$30.00</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+    <!-- Banner Begin -->
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="img/560x400-3__1__fa4b145530b04bdcacef02c4939f37a0.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="banner__pic">
+                        <img src="img/560x400-yehwadam_aa991475b92640009364180277cbda02.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Latest Product Section Begin -->
+    <section class="latest-product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản Phẩm Mới Nhất</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/kemduong1_d5ae821ee9704ca88a8d7db8c0f5e977_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Dưỡng Keo Ong Tái Tạo Phục Hồi Da CNP LABORATORY PROPOLIS ACTIVE CREAM 50ml</h6>
+                                        <span>830,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/kemduong1_d5ae821ee9704ca88a8d7db8c0f5e977_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Dưỡng Keo Ong Tái Tạo Phục Hồi Da CNP LABORATORY PROPOLIS ACTIVE CREAM 50ml</h6>
+                                        <span>830,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/kemduong1_d5ae821ee9704ca88a8d7db8c0f5e977_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Dưỡng Keo Ong Tái Tạo Phục Hồi Da CNP LABORATORY PROPOLIS ACTIVE CREAM 50ml</h6>
+                                        <span>830,000₫</span>
+                                    </div>
+                                </a>
+                               
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/hong15ml_769d7973720647e4b7e4ef62f216c622_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Tinh Chất Hồng 7 Loại Vitamin B Phục Hồi Và Làm Sáng Da CNP LABORATORY VITA-B ENERGY AMPULE 15ml</h6>
+                                        <span>680,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/hong15ml_769d7973720647e4b7e4ef62f216c622_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Tinh Chất Hồng 7 Loại Vitamin B Phục Hồi Và Làm Sáng Da CNP LABORATORY VITA-B ENERGY AMPULE 15ml</h6>
+                                        <span>680,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/hong15ml_769d7973720647e4b7e4ef62f216c622_master.png" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Tinh Chất Hồng 7 Loại Vitamin B Phục Hồi Và Làm Sáng Da CNP LABORATORY VITA-B ENERGY AMPULE 15ml</h6>
+                                        <span>680,000₫</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản Phẩm Đánh Giá Cao </h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/dr.belmeur-derma-repair-shampoo-1_41d405c6289544209a8c5e2fd2dc0614_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Dầu Gội Phục Hồi Ngăn Rụng Tóc DR.BELMEUR DERMA REPAIR SHAMPOO 500ml</h6>
+                                        <span>529,000₫
+                                        </span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/dr.belmeur-derma-repair-shampoo-1_41d405c6289544209a8c5e2fd2dc0614_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Dầu Gội Phục Hồi Ngăn Rụng Tóc DR.BELMEUR DERMA REPAIR SHAMPOO 500ml</h6>
+                                        <span>529,000₫
+                                        </span>
+                                    </div>
+                                </a> <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/dr.belmeur-derma-repair-shampoo-1_41d405c6289544209a8c5e2fd2dc0614_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Dầu Gội Phục Hồi Ngăn Rụng Tóc DR.BELMEUR DERMA REPAIR SHAMPOO 500ml</h6>
+                                        <span>529,000₫
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/monopop-eyeshadow-palette-01_fe01ce4f948f40828ffc8ce25a8cf86c_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>[FMGT] Bảng Phấn Mắt 9 Màu THEFACESHOP MONO POP EYESHADOW PALETTE (0.8gx9)</h6>
+                                        <span>975,000₫</span>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/monopop-eyeshadow-palette-01_fe01ce4f948f40828ffc8ce25a8cf86c_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>[FMGT] Bảng Phấn Mắt 9 Màu THEFACESHOP MONO POP EYESHADOW PALETTE (0.8gx9)</h6>
+                                        <span>975,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/monopop-eyeshadow-palette-01_fe01ce4f948f40828ffc8ce25a8cf86c_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>[FMGT] Bảng Phấn Mắt 9 Màu THEFACESHOP MONO POP EYESHADOW PALETTE (0.8gx9)</h6>
+                                        <span>975,000₫</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="latest-product__text">
+                        <h4>Sản Phẩm Có Đánh Giá</h4>
+                        <div class="latest-product__slider owl-carousel">
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/upload_f296c8b5603544fe89cf833455ef1ce8_c50d420a61f54ddd8c5a0a07ed9c06ac_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Nền Đa Năng POWER PERFECTION BB CREAM SPF37 PA++ (20G)</h6>
+                                        <span>419,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/upload_f296c8b5603544fe89cf833455ef1ce8_c50d420a61f54ddd8c5a0a07ed9c06ac_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Nền Đa Năng POWER PERFECTION BB CREAM SPF37 PA++ (20G)</h6>
+                                        <span>419,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/upload_f296c8b5603544fe89cf833455ef1ce8_c50d420a61f54ddd8c5a0a07ed9c06ac_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Kem Nền Đa Năng POWER PERFECTION BB CREAM SPF37 PA++ (20G)</h6>
+                                        <span>419,000₫</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest-prdouct__slider__item">
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/combo_cham_da_chong_nang-05_4a0b6667cfcd40acb338486e00842413_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Xịt khoáng phục hồi da nhạy cảm DR. BELMEUR DAILY REPAIR REHYDRATING MIST 100ml</h6>
+                                        <span>439,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/combo_cham_da_chong_nang-05_4a0b6667cfcd40acb338486e00842413_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Xịt khoáng phục hồi da nhạy cảm DR. BELMEUR DAILY REPAIR REHYDRATING MIST 100ml</h6>
+                                        <span>439,000₫</span>
+                                    </div>
+                                </a>
+                                <a href="#" class="latest-product__item">
+                                    <div class="latest-product__item__pic">
+                                        <img src="img/product/combo_cham_da_chong_nang-05_4a0b6667cfcd40acb338486e00842413_master.jpg" alt="">
+                                    </div>
+                                    <div class="latest-product__item__text">
+                                        <h6>Xịt khoáng phục hồi da nhạy cảm DR. BELMEUR DAILY REPAIR REHYDRATING MIST 100ml</h6>
+                                        <span>439,000₫</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Product Section End -->
+
+    <!-- Blog Section Begin -->
+    <section class="from-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title from-blog__title">
+                        <h2>Blog Làm Đẹp</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/20180930052206808_502b56ec7b36459db951babee2083ce1.jpg" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> Thứ 7, Ngày 12, Tháng 3, Năm 2022</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Cách sử dụng kem dưỡng ẩm hiệu quả</a></h5>
+                            <p>Thời tiết hanh khô hoặc nắng nóng là yếu tố khiến da của bạn chịu nhiều tổn thương. Thế nên kem dưỡng ẩm đóng vai trò vô cùng quan trọng trong việc chăm sóc da. Không chỉ khắc phục tình trạng khô sần bong tróc, kem dưỡng còn bảo vệ da, ngăn ngừa tình trạng lão hóa sớm. Cùng hiểu hơn về công dụng tuyệt vời của dưỡng ẩm và cách sử dụng đúng cách qua bài viết dưới đây. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/tay-te-bao-chet-toan-than-yehwadam-body-peeling-300ml-1_a33b3e9e265d45d29be98b571e70f0fd.png" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> Thứ 6, Ngày 11, Tháng 3, Năm 2022</li>
+                                <li><i class="fa fa-comment-o"></i> 4</li>
+                            </ul>
+                            <h5><a href="#">7 bí quyết dưỡng trắng da body đón Tết</a></h5>
+                            <p>Tết là phải đẹp, Tết là phải tươi! Ngoài da mặt, cơ thể cũng cần được chăm sóc để chuẩn bị đón một mùa Tết nữa sắp đến. Ai cũng muốn có một làn da trắng sáng để tự tin diện đồ, rạng rỡ gặp gỡ bạn bè, người thân. Bỏ túi những bí quyết dưỡng trắng da body dưới đây để có một làn da sáng khỏe không tì vết, tự tin diện đồ xinh lung linh trong mùa xuân này nhé!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic">
+                            <img src="img/2_3dd058e4ad1744bbb4ede39a887dadcb.png" alt="">
+                        </div>
+                        <div class="blog__item__text">
+                            <ul>
+                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-comment-o"></i> 5</li>
+                            </ul>
+                            <h5><a href="#">Học ngay 7 bước trang điểm đơn giản và lâu trôi cho da dầu mụn</a></h5>
+                            <p>Da dầu mụn là nổi ám ảnh khiến nhiều người không tự tin khi trang điểm vì dễ làm lớp nền trôi tuột, bóng dầu và lộ khuyết điểm. Bạn có bao giờ gặp phải tình trạng càng trang điểm nhiều càng khiến da nổi đầy mụn. Hoặc khi make up da bóng dầu và trôi tuột để lộ mụn thâm trên da?
+
+                                Đây là hiện tượng nhiều người gặp phải khi sở hữu làn da dầu mụn “khó chiều". Hãy cùng The Face Shop thực hiện ngay các bước trang điểm cho da dầu mụn đơn giản, lâu trôi dưới đây! </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 1/1 Đường Số 4, P.Bình Thọ, TP.Thủ Đức</li>
+                            <li>Phone: +84 942232873</li>
+                            <li>Email:phinphpd04328@fpt.edu.vn</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/nguyenpham.hungphi.7/" target="_blank">Nguyễn Phạm Hùng Phi</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+
+
+  <!-- Don't change the format for any other products. -->
+  <!-- etc. -->
+  <script src="/js/main.js"></script>
+<script>
+
+
+
+</script>
+
+</body>
+
+</html>

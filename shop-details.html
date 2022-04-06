@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="icon" href="/AsgnWeb207/img/thiet-ke-logo-thoi-trang-02.jpg" type="image/x-icon" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!-- <script>
+        function includeHTML() {
+          var z, i, elmnt, file, xhttp;
+          /* Loop through a collection of all HTML elements: */
+          z = document.getElementsByTagName("*");
+          for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+              /* Make an HTTP request using the attribute value as the file name: */
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                  if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                  if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+                }
+              }
+              xhttp.open("GET", file, true);
+              xhttp.send();
+              /* Exit the function: */
+              return;
+            }
+          }
+        }
+        </script> -->
+</head>
+
+<body ng-app="myApp">
+
+
+    <!-- Page Preloder -->
+  <div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Humberger Begin -->
+<div class="humberger__menu__overlay"></div>
+<div class="humberger__menu__wrapper">
+    <div class="humberger__menu__logo">
+        <a href="#"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+    </div>
+    <div class="humberger__menu__cart">
+        <ul>
+            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+        </ul>
+        <div class="header__cart__price">item: <span>$150.00</span></div>
+    </div>
+    <div class="humberger__menu__widget">
+        <div class="header__top__right__language">
+            <img src="img/230px-Flag_of_North_Vietnam_(1955–1976).svg.png" alt="" width="25px">
+            <div>VietNam</div>
+            <span class="arrow_carrot-down"></span>
+            <ul>
+                <li><a href="#">VietNam</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+        </div>
+        <div class="header__top__right__auth">
+            <a href="./login.html"><i class="fa fa-user"></i> Login</a>
+        </div>
+    </div>
+    <nav class="humberger__menu__nav mobile-menu">
+        <ul>
+            <li class="active"><a href="index.html">Trang Chủ</a></li>
+            <li><a href="shop-grid.html">Cửa Hàng</a></li>
+            <li><a href="#">Trang Sản phẩm</a>
+                <ul class="header__menu__dropdown">
+                    <li><a href="./shop-details.html">Chi tiết sản phẩm</a></li>
+                    <li><a href="./shoping-cart.html">Giỏ Hàng</a></li>
+                    <li><a href="./checkout.html">Kiểm Tra Đơn Hàng</a></li>
+                    <li><a href="./blog-details.html">Chi Tiết Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="mobile-menu-wrap"></div>
+    <div class="header__top__right__social">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+    </div>
+    <div class="humberger__menu__contact">
+        <ul>
+            <li><i class="fa fa-envelope"></i>phinphpd04328@fpt.edu.vn</li>
+            <li>Miễn Phí Vận Chuyển Cho Đơn Hàng Từ 200.000đ</li>
+        </ul>
+    </div>
+</div>
+<!-- Humberger End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__left">
+                        <ul>
+                            <li><i class="fa fa-envelope"></i>phinphpd04328@fpt.edu.vn</li>
+                            <li>Miễn Phí Vận Chuyển Cho Đơn Hàng Từ 200.000đ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="header__top__right">
+                        <div class="header__top__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                        <div class="header__top__right__language">
+                            <img src="img/230px-Flag_of_North_Vietnam_(1955–1976).svg.png" alt="" width="27px">
+                            <div>VietNam</div>
+                            <span class="arrow_carrot-down"></span>
+                            <ul>
+                                <li><a href="#">VietNam</a></li>
+                                <li><a href="#">English</a></li>
+                            </ul>
+                        </div>
+                        <div class="header__top__right__auth">
+                            <a href="login.html"><i class="fa fa-user"></i> Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="header__logo">
+                    <a href="./index.html"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="header__menu">
+                    <ul>
+                        <li class="active"><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="shop-grid.html">Cửa Hàng</a></li>
+                        <li><a href="#">Trang Sản Phẩm</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="shop-details.html">Chi Tiết Cửa Hàng</a></li>
+                                <li><a href="shoping-cart.html">Giỏ Hàng</a></li>
+                                <li><a href="checkout.html">Kiểm Tra Đơn Hàng</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-3">
+                <div class="header__cart">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a href="shoping-cart.html"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="humberger__open">
+            <i class="fa fa-bars"></i>
+        </div>
+    </div>
+</header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
+        <div class="container" ng-controller="myCtrl">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Danh Mục Sản Phẩm</span>
+                        </div>
+                        <ul>
+                            <li ng-repeat="item in danhmuc"><a href="" value="{{item.idDanhMuc}}">{{item.nameDanhMuc}}</a></li>
+                      
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                
+                                <input type="text" placeholder="What do you need?">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="hero__search__phone__text">
+                                <h5>+84 0942232873</h5>
+                                <span>Hỗ trợ tư vấn 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Breadcrumb Section Begin -->
+
+    <section class="breadcrumb-section set-bg" data-setbg="https://iweb247.com/uploads/images/thiet-ke-banner-quang-cao-my-pham.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Cosmetic’s Package</h2>
+                        <div class="breadcrumb__option">
+                            <a href="index.html">Home</a>
+                            <a href="shop-grid.html">Shop</a>
+                            <span>Cosmetic’s Package</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                src="img/product/6458baefa5c4043678b72_grande_a24eb402ec27462b8614f0d6d2be265c_large_1__403df2b5eadc452e95d1f1da06b1e118_master.png" alt="">
+                        </div>
+                        <div class="product__details__pic__slider owl-carousel">
+                            <img data-imgbigurl="img/product/6458baefa5c4043678b72_grande_a24eb402ec27462b8614f0d6d2be265c_large_1__403df2b5eadc452e95d1f1da06b1e118_master.png"
+                                src="img/product/6458baefa5c4043678b72_grande_a24eb402ec27462b8614f0d6d2be265c_large_1__403df2b5eadc452e95d1f1da06b1e118_master.png" alt="">
+                            <img data-imgbigurl="img/product/74ba8a163b9dd9ed4247b_grande_0d3f440b0e4b4d7798f406eda23bfec0_large_1__cff9929d34374e2a9788810baaf1d6fd_master.png"
+                                src="img/product/74ba8a163b9dd9ed4247b_grande_0d3f440b0e4b4d7798f406eda23bfec0_large_1__cff9929d34374e2a9788810baaf1d6fd_master.png" alt="">
+                            <img data-imgbigurl="img/product/741d6999e103644a68562_grande_af002f2215f64621a043c79e7a9cd735_large_1__46b56abbeca44ff7b8c1fcd3a8f2b7d8_master.png"
+                                src="img/product/741d6999e103644a68562_grande_af002f2215f64621a043c79e7a9cd735_large_1__46b56abbeca44ff7b8c1fcd3a8f2b7d8_master.png" alt="">
+                            <img data-imgbigurl="img/product/945f5941212f65e61574e_grande_ed9a2395ee1140c4b3967f1684d9cf78_large_1__34a7b49e118a4442a7ddb62cdf031848_master.png"
+                                src="img/product/945f5941212f65e61574e_grande_ed9a2395ee1140c4b3967f1684d9cf78_large_1__34a7b49e118a4442a7ddb62cdf031848_master.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>[FMGT] Son lì mềm mịn môi ROUGE POWDER MATTE (3.2g)</h3>
+                        <div class="product__details__rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <span>(18 reviews)</span>
+                        </div>
+                        <div class="product__details__price">499,000₫</div>
+                        <p>fmgt sử dụng các công nghệ, công thức làm đẹp cải tiến cho hiệu quả cao hơn. Bảng màu đa dạng hơn phù hợp cho nhiều loại da, đặc biệt là sản phẩm cushion & foundation.</p>
+                        <div class="product__details__quantity">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="primary-btn">ADD TO CARD</a>
+                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        <ul>
+                            <li><b>Tình Trạng: </b> <span>Còn Hàng</span></li>
+                            <li><b>Vận Chuyển: </b> <span>Vận chuyển nội tỉnh trong 1 ngày. <samp>01 day shipping</samp></span></li>
+                            <li><b>Cân nặng</b> <span>0.3 gr</span></li>
+                            <li><b>Chia sẻ</b>
+                                <div class="share">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                    aria-selected="true">Mô Tả</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                    aria-selected="false">Thông Tin</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab"
+                                    aria-selected="false">Chính Sách <span>(1)</span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Mô Tả Sản phẩm</h6>
+                                    <p>Rouge Powder Matte chính là sự lựa chọn lý tưởng dành cho bạn. Nằm trong bộ sưu tập dòng son Rouge của nhà BOSHOP.VN, mang chiếc áo đẳng cấp thời thượng fmgt, Rouge Powder Matte không hề kém cạnh Son Thỏi Dưỡng Ẩm ROUGE SATIN MOISTURE hay Son Lì ROUGE TRUE MATTE. Với kết cấu mới, dạng bột lì mịn, chất son mềm mượt tạo hiệu ứng đôi môi tự nhiên với các gam màu tươi tắn và sống động, dễ sử dụng và phù hợp với nhiều tông màu da.
+
+                                        Son lì Rouge Powder Matte có thiết kế đơn giản, thời thượng. Vỏ ngoài tệp với màu son, bắt mắt và tiện dụng. Đầu son vát nhọn giúp dễ dàng viền môi và tô đều son ở cả những khóe môi. Chất son matte nhưng vẫn chứa nhiều dưỡng chất giúp son lên môi mềm mượt như nhung, không bị khô, lộ vân môi.
+                                        
+                                        Nhẹ như không chính là ưu điểm nổi bật không thể bỏ qua của dòng son này. Dù bạn có thoa nhiều lớp son, vẫn không hề có cảm giác nặng môi.
+                                        <br>  
+                                        <h4>ƯU ĐIỂM NỔI BẬT CỦA SON LÌ ROUGE POWDER MATTE</h4> 
+                                        <ul class="pt-2">
+                                            <li>Nổi bật với 6 màu sắc tươi tắn thời trang</li>
+                                            <li>Lên màu chuẩn tự nhiên</li>
+                                            <li>Chất son mịn, mướt môi không gây khô môi</li>
+                                            <li>Son bền màu lưu giữ lâu trên môi.</li>
+                                            
+                                        </ul> 
+                                        
+                                        
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Thông Tin Thương Hiệu</h6>
+                                    <p>dòng sản phẩm chuyên về make-up của thương hiệu BOSHOP.VN,  với những cải tiến vượt bậc về chất lượng cùng vẻ ngoài ấn tượng, màu đen chủ đạo thể hiện sự sang trọng, đẳng cấp phong cách hơn đang khuấy đảo giới beauty blogger.
+
+                                        Bạn có thể dễ dàng nhận diện được dòng sản phẩm FMGT của BOSHOP.VN qua một vài đặc điểm sau: </p>
+                                    <p>- fmgt sử dụng các công nghệ, công thức làm đẹp cải tiến cho hiệu quả cao hơn. Bảng màu đa dạng hơn phù hợp cho nhiều loại da, đặc biệt là sản phẩm cushion & foundation.</p>
+                                    <p>- Tên thương hiệu/Bao bì 
+
+                                        Nếu lúc trước thiết kế vỏ hộp có logo hay tên thương hiệu BOSHOP.VN thì sẽ được thay thế bằng dòng chữ "fmgt". 
+                                        
+                                        Với tông màu đen chủ đạo, các sản phẩm fmgt thể hiện sự đẳng cấp chuyên nghiệp hơn trong make up. </p>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Chính Sách Đổi Trả</h6>
+                                    <p>Khi mua hàng tại BOSHOP.VN, trong thời gian 7 ngày kể từ khi nhận hàng, bạn được chấp nhận đổi lại sản phẩm hoặc đổi lấy sản phẩm giá trị cao hơn (trả thêm phần tiền chênh lệch). Tuy nhiên, trước khi tiến hành đổi, bạn cần lưu ý những yêu cầu cụ thể sau:</p>
+                                    <ul>
+                                        <li>1.Điều kiện đổi hàng.</li>
+                                        <li>2.Cách thức đổi hàng.</li>
+                                        <li>3.Các chi phí liên quan đến việc đổi hàng.</li>
+                                        <li>4.Đóng gói gửi sản phẩm về cho Beauty Box.</li>
+                                        <li>5.Thời gian đổi hàng</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+
+    <!-- Related Product Section Begin -->
+    <section class="related-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title related__product__title">
+                        <h2>Sản Phẩm Mới Nhất</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/fmgt_quad_eyeshadow_palette_oh__splash_edition_01__aurora_splash_1_40615a6c723844c5add049e612582fa0_master.jpg">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>300,000₫</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/05_82ef961d844d447ba86fdc68a98ed990_large_1__31ca39cb1c064751847571480842487a_1024x1024.png">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>300,000₫</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/6149cc798f4bd9b8ccf6209b515fff_grande_964f67d047444f2a959027e2b79d7f95_6cb8c3a9847341e6ac94274eb5f426be_master.png">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>300,000₫</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="img/product/tone_up_loose_powder_v201_ee566f696d1c41d99e13e94b6dfbef7c_master.png">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="#">Tên Sản Phẩm</a></h6>
+                            <h5>300,000₫</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="https://www.boshop.vn/uploads/2019/10/07/5d9b645a75d44-icon-logo-desktop.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 1/1 Đường Số 4, P.Bình Thọ, TP.Thủ Đức</li>
+                            <li>Phone: +84 942232873</li>
+                            <li>Email:phinphpd04328@fpt.edu.vn</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.facebook.com/nguyenpham.hungphi.7/" target="_blank">Nguyễn Phạm Hùng Phi</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
